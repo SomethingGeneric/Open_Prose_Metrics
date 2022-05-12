@@ -17,6 +17,9 @@ tz=$(curl https://geoip.kde.org/v1/calamares | jq -r '.time_zone')
 # dpkg-reconfigure tzdata (automation?)
 ln -fs /usr/share/zoneinfo/${tz} /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
+apt remove --purge -y python3-pexpect
+apt autoremove -y
+
 # Repository - General
 echo "Install from Ubuntu Package Manager"
 apt update && apt upgrade -y
