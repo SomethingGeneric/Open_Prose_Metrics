@@ -53,6 +53,8 @@ pip3.7 install wheel virtualenv ipython
 echo "Create VENV"
 virtualenv -p python3.7 $VENV
 source $VENV/bin/activate
+echo "Upgrading pip"
+pip install --upgrade pip
 echo "Install from venv pip"
 pip install -r /vagrant/opm/requirements.txt
 # opm
